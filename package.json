@@ -10,10 +10,31 @@
 		"Other"
 	],
 	"activationEvents": [
+		"onView:vsproject-sidebar",
 		"onCommand:vsproject.helloWorld"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "vsproject-sidebar-view",
+					"title": "VSProject",
+					"icon": "media/dark.svg"
+				}
+			]
+		},
+		"views": {
+			"vsproject-sidebar-view" :[
+				{
+					"type": "tree",
+					"id": "vsproject-sidebar",
+					"name": "VSProject",
+					"icon": "media/dark.svg",
+					"contextualTitle": "VSProject"
+				}
+			]
+		},
 		"commands": [
 			{
 				"command": "vsproject.helloWorld",
